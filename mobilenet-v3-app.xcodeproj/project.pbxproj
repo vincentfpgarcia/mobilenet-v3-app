@@ -11,6 +11,9 @@
 		BFF64CBC2AAEFB0F00D72768 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */; };
 		BFF64CBE2AAEFB1100D72768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF64CBD2AAEFB1100D72768 /* Assets.xcassets */; };
 		BFF64CC12AAEFB1100D72768 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF64CC02AAEFB1100D72768 /* Preview Assets.xcassets */; };
+		BFF64CC82AAEFF2300D72768 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF64CC72AAEFF2300D72768 /* Camera.swift */; };
+		BFF64CCA2AAEFF8800D72768 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF64CC92AAEFF8800D72768 /* Engine.swift */; };
+		BFF64CCE2AAF045900D72768 /* MobileNetV3Package in Frameworks */ = {isa = PBXBuildFile; productRef = BFF64CCD2AAF045900D72768 /* MobileNetV3Package */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BFF64CBD2AAEFB1100D72768 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFF64CC02AAEFB1100D72768 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BFF64CC72AAEFF2300D72768 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		BFF64CC92AAEFF8800D72768 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		BFF64CCB2AAF003100D72768 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF64CCE2AAF045900D72768 /* MobileNetV3Package in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +58,11 @@
 		BFF64CB82AAEFB0F00D72768 /* mobilenet-v3-app */ = {
 			isa = PBXGroup;
 			children = (
+				BFF64CCB2AAF003100D72768 /* Info.plist */,
 				BFF64CB92AAEFB0F00D72768 /* mobilenet_v3_appApp.swift */,
 				BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */,
+				BFF64CC72AAEFF2300D72768 /* Camera.swift */,
+				BFF64CC92AAEFF8800D72768 /* Engine.swift */,
 				BFF64CBD2AAEFB1100D72768 /* Assets.xcassets */,
 				BFF64CBF2AAEFB1100D72768 /* Preview Content */,
 			);
@@ -83,6 +93,9 @@
 			dependencies = (
 			);
 			name = "mobilenet-v3-app";
+			packageProductDependencies = (
+				BFF64CCD2AAF045900D72768 /* MobileNetV3Package */,
+			);
 			productName = "mobilenet-v3-app";
 			productReference = BFF64CB62AAEFB0F00D72768 /* mobilenet-v3-app.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +124,9 @@
 				Base,
 			);
 			mainGroup = BFF64CAD2AAEFB0F00D72768;
+			packageReferences = (
+				BFF64CCC2AAF045900D72768 /* XCRemoteSwiftPackageReference "mobilenet-v3-package" */,
+			);
 			productRefGroup = BFF64CB72AAEFB0F00D72768 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFF64CBC2AAEFB0F00D72768 /* ContentView.swift in Sources */,
+				BFF64CCA2AAEFF8800D72768 /* Engine.swift in Sources */,
 				BFF64CBA2AAEFB0F00D72768 /* mobilenet_v3_appApp.swift in Sources */,
+				BFF64CC82AAEFF2300D72768 /* Camera.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,18 +288,20 @@
 				DEVELOPMENT_TEAM = P6S89B4DCZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Yellow;
+				INFOPLIST_FILE = "mobilenet-v3-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Marcel;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Require the access to the camera to analyze the world";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moustache.mobilenet-v3-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -289,7 +309,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,18 +324,20 @@
 				DEVELOPMENT_TEAM = P6S89B4DCZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Yellow;
+				INFOPLIST_FILE = "mobilenet-v3-app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Marcel;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Require the access to the camera to analyze the world";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.moustache.mobilenet-v3-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -323,7 +345,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -349,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFF64CCC2AAF045900D72768 /* XCRemoteSwiftPackageReference "mobilenet-v3-package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vincentfpgarcia/mobilenet-v3-package";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFF64CCD2AAF045900D72768 /* MobileNetV3Package */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFF64CCC2AAF045900D72768 /* XCRemoteSwiftPackageReference "mobilenet-v3-package" */;
+			productName = MobileNetV3Package;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFF64CAE2AAEFB0F00D72768 /* Project object */;
 }

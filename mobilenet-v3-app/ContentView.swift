@@ -13,6 +13,9 @@ struct ContentView: View {
 
     @StateObject private var engine = Engine()
 
+    @State private var showSheet = true
+
+
     var body: some View {
 
         ZStack {
@@ -24,6 +27,9 @@ struct ContentView: View {
                 InfoView(engine: engine)
             }
             .padding()
+        }
+        .sheet(isPresented: $showSheet) {
+            IntroView()
         }
         .task {
             await engine.camera.start()

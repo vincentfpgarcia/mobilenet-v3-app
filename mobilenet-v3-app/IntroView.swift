@@ -62,13 +62,11 @@ struct IntroView: View {
                 .frame(maxWidth: .infinity)
             }
             .padding()
-
         }
     }
 
     func close() {
         dismiss()
-        print("Coucou")
     }
 }
 

@@ -15,7 +15,6 @@ struct ContentView: View {
 
     @State private var showSheet = true
 
-
     var body: some View {
 
         ZStack {
@@ -39,32 +38,17 @@ struct ContentView: View {
 
 
 struct BackgroundView: View {
-
     @ObservedObject var engine: Engine
-
     var body: some View {
-
-
-
         GeometryReader { geo in
-
-
-//            let proba = $engine.proba
 //            let (red, green, blue) = computeColor()
-//            computeColor()
 //            Color(red: red, green: green, blue: blue)
-//            Color(UIColor.lightGray)
-
             Color(white: 0.95)
-
         }
         .ignoresSafeArea()
     }
 
     func computeColor() -> Color {
-//        guard let proba = engine.proba else {
-//            return (0.8, 0.8, 0.8)
-//        }
         guard let probability = engine.probability else {
             return Color(red: 0.8, green: 0.8, blue: 0.8)
         }
@@ -97,20 +81,6 @@ struct ImageView: View {
 }
 
 
-//struct TextInfo: ViewModifier {
-//    func body(content: Content) -> some View {
-//        content
-////            .font(.headline)
-//    }
-//}
-//
-//extension View {
-//    func textStyle() -> some View {
-//        modifier(TextInfo())
-//    }
-//}
-
-
 struct InfoView: View {
 
     @ObservedObject var engine: Engine
@@ -126,7 +96,7 @@ struct InfoView: View {
                 Text(label)
             }
 
-            let proba = engine.probability != nil ? "\(Int(engine.probability! * 100)) %" : "0 %"
+            let proba =  "\(engine.probability != nil ? Int(engine.probability! * 100) : 0) %"
             HStack {
                 Text("Confidence")
                 Spacer()
@@ -135,7 +105,7 @@ struct InfoView: View {
 
             let fps = engine.fps != nil ? engine.fps! : 0
             HStack {
-                Text("Inference per second")
+                Text("Inferences per second")
                 Spacer()
                 Text("\(fps)")
             }

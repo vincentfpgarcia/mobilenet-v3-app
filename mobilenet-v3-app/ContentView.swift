@@ -66,6 +66,26 @@ struct BackgroundView: View {
 }
 
 
+struct BackgroundView2: View {
+    @ObservedObject var engine: Engine
+    var body: some View {
+
+        GeometryReader { geo in
+            if let cgImage = engine.cgImage {
+                Image(uiImage: UIImage(cgImage: cgImage))
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea()
+                    .blur(radius: 10)
+                    .overlay() {
+                        Color.black.opacity(0.5).ignoresSafeArea()
+                    }
+            }
+        }
+    }
+}
+
+
 struct ImageView: View {
 
     @ObservedObject var engine: Engine

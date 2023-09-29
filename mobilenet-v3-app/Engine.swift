@@ -73,7 +73,12 @@ final class Engine: ObservableObject {
 
                 // Compute the average inference time
                 let durationInMs = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000.0
-                let fps = Int(1000.0 / durationInMs)
+//                let fps = Int(1000.0 / durationInMs)
+//                let newFps = Int(0.9 * Double(self.fps!) + 0.1 * fps)
+
+                let oldFps: Double = self.fps != nil ? Double(self.fps!) : 0.0
+                let newFps: Double = 1000.0 / durationInMs
+                let fps = Int(round(oldFps * 0.9 + newFps * 0.1))
 
                 // Update the UI
                 Task { @MainActor in

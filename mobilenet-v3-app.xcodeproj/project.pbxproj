@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFECBF692AC9A4CA000F87E4 /* CyberpunkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFECBF682AC9A4CA000F87E4 /* CyberpunkView.swift */; };
 		BFF64CBA2AAEFB0F00D72768 /* mobilenet_v3_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF64CB92AAEFB0F00D72768 /* mobilenet_v3_appApp.swift */; };
 		BFF64CBC2AAEFB0F00D72768 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */; };
 		BFF64CBE2AAEFB1100D72768 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF64CBD2AAEFB1100D72768 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BFECBF682AC9A4CA000F87E4 /* CyberpunkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyberpunkView.swift; sourceTree = "<group>"; };
 		BFF64CB62AAEFB0F00D72768 /* mobilenet-v3-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mobilenet-v3-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF64CB92AAEFB0F00D72768 /* mobilenet_v3_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobilenet_v3_appApp.swift; sourceTree = "<group>"; };
 		BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				BFF64CCB2AAF003100D72768 /* Info.plist */,
 				BFF64CB92AAEFB0F00D72768 /* mobilenet_v3_appApp.swift */,
 				BFF64CBB2AAEFB0F00D72768 /* ContentView.swift */,
+				BFECBF682AC9A4CA000F87E4 /* CyberpunkView.swift */,
 				BFF64CCF2AB0478800D72768 /* IntroView.swift */,
 				BFF64CC72AAEFF2300D72768 /* Camera.swift */,
 				BFF64CC92AAEFF8800D72768 /* Engine.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFECBF692AC9A4CA000F87E4 /* CyberpunkView.swift in Sources */,
 				BFF64CBC2AAEFB0F00D72768 /* ContentView.swift in Sources */,
 				BFF64CCA2AAEFF8800D72768 /* Engine.swift in Sources */,
 				BFF64CD02AB0478800D72768 /* IntroView.swift in Sources */,
@@ -287,7 +291,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"mobilenet-v3-app/Preview Content\"";
 				DEVELOPMENT_TEAM = P6S89B4DCZ;
 				ENABLE_PREVIEWS = YES;
@@ -323,7 +327,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"mobilenet-v3-app/Preview Content\"";
 				DEVELOPMENT_TEAM = P6S89B4DCZ;
 				ENABLE_PREVIEWS = YES;

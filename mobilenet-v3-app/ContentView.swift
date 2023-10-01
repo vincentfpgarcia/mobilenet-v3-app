@@ -13,20 +13,22 @@ struct ContentView: View {
 
     @StateObject private var engine = Engine()
 
-    @State private var showSheet = true
+    @State private var showSheet = false
 
     var body: some View {
 
-        ZStack {
+//        ZStack {
+//
+//            BackgroundView(engine: engine)
+//
+//            VStack(spacing: 20) {
+//                ImageView(engine: engine)
+//                InfoView(engine: engine)
+//            }
+//            .padding()
+//        }
 
-            BackgroundView(engine: engine)
-
-            VStack(spacing: 20) {
-                ImageView(engine: engine)
-                InfoView(engine: engine)
-            }
-            .padding()
-        }
+        CyberpunkView(engine: engine)
         .sheet(isPresented: $showSheet) {
             IntroView()
         }

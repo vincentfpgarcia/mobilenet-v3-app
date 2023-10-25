@@ -16,7 +16,6 @@ final class Engine: ObservableObject {
     @Published var label: String?
     @Published var probability: Double?
     @Published var fps: Int?
-    @Published var maxFps: Int?
 
     init() {
         Task {
@@ -69,7 +68,6 @@ final class Engine: ObservableObject {
                 let newFps: Double = 1000.0 / durationInMs
                 let oldFps: Double = self.fps != nil ? Double(self.fps!) : newFps
                 let fps = Int(round(oldFps * 0.95 + newFps * 0.05))
-                let maxFps = self.maxFps==nil ? Int(newFps) : max(Int(newFps), self.maxFps!)
 
                 // Update the UI
                 Task { @MainActor in
@@ -77,7 +75,6 @@ final class Engine: ObservableObject {
                     self.label = label
                     self.probability = probability
                     self.fps = fps
-                    self.maxFps = maxFps
                 }
 
 //                try! await Task.sleep(nanoseconds: 100_000_000)

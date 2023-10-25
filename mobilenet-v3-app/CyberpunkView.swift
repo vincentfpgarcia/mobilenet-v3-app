@@ -79,7 +79,7 @@ struct CyberpunkInfoView: View {
                         .textCase(.uppercase)
                         .foregroundColor(Color.cyberpunkText)
                 }
-                .frame(width: width / 2.0)
+                .frame(width: width / 3.0)
 
                 let fps = engine.fps != nil ? engine.fps! : 0
                 VStack {
@@ -93,7 +93,21 @@ struct CyberpunkInfoView: View {
                         .textCase(.uppercase)
                         .foregroundColor(Color.cyberpunkText)
                 }
-                .frame(width: width / 2.0)
+                .frame(width: width / 3.0)
+
+                let maxFps = engine.maxFps != nil ? engine.maxFps! : 0
+                VStack {
+                    Text("Max FPS")
+                        .font(.caption)
+                        .textCase(.uppercase)
+                        .foregroundColor(Color.cyberpunkCaption)
+                    Text("\(maxFps)")
+                        .font(.title)
+                        .fontWeight(.black)
+                        .textCase(.uppercase)
+                        .foregroundColor(Color.cyberpunkText)
+                }
+                .frame(width: width / 3.0)
             }
         }
 

@@ -16,6 +16,7 @@ final class Engine: ObservableObject {
     @Published var label: String?
     @Published var probability: Double?
     @Published var fps: Int?
+    @Published var maxFps: Int?
 
     init() {
         Task {
@@ -46,22 +47,13 @@ final class Engine: ObservableObject {
 
     func processPicture() async {
 
-        let model = MobileNetV3Package()!
+        let model = MobileNetV3Package(computeUnits: .all)!
 
         while true {
 
             if let image = cgImage {
 
-                print("Image size: \(image.width) x \(image.height)")
-
-//                // Crop and resize the image
-//                let w = image.width
-//                let h = image.height
-//                let l = min(w, h)
-//                let x = (w - l) / 2
-//                let y = (h - l) / 2
-//                let imageCropped = image.cropping(to: CGRect(x: x, y: y, width: l, height: l))!
-//                let imageResized = imageCropped.resize(size: CGSize(width: 224, height: 224))!
+//                print("Image size: \(image.width) x \(image.height)")
 
                 // Resize the image
                 let imageResized = image.resize(size: CGSize(width: 224, height: 224))!
@@ -73,12 +65,11 @@ final class Engine: ObservableObject {
 
                 // Compute the average inference time
                 let durationInMs = Double(end.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000.0
-//                let fps = Int(1000.0 / durationInMs)
-//                let newFps = Int(0.9 * Double(self.fps!) + 0.1 * fps)
 
-                let oldFps: Double = self.fps != nil ? Double(self.fps!) : 0.0
                 let newFps: Double = 1000.0 / durationInMs
-                let fps = Int(round(oldFps * 0.9 + newFps * 0.1))
+                let oldFps: Double = self.fps != nil ? Double(self.fps!) : newFps
+                let fps = Int(round(oldFps * 0.95 + newFps * 0.05))
+                let maxFps = self.maxFps==nil ? Int(newFps) : max(Int(newFps), self.maxFps!)
 
                 // Update the UI
                 Task { @MainActor in
@@ -86,14 +77,11 @@ final class Engine: ObservableObject {
                     self.label = label
                     self.probability = probability
                     self.fps = fps
+                    self.maxFps = maxFps
                 }
 
-
 //                try! await Task.sleep(nanoseconds: 100_000_000)
-
-
             }
-
 //            sleep(1)
         }
     }

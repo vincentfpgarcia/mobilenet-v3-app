@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-fileprivate let radius = CGFloat(15)
 
 struct ContentView: View {
 
@@ -26,21 +25,6 @@ struct ContentView: View {
         }
     }
 }
-
-struct ImageView: View {
-
-    @ObservedObject var engine: Engine
-
-    var body: some View {
-        if let image = engine.viewfinderImage {
-            image
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(radius)
-        }
-    }
-}
-
 
 
 struct ContentView_Previews: PreviewProvider {

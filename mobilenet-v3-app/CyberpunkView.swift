@@ -7,12 +7,27 @@
 
 import SwiftUI
 
+let radius: CGFloat = 15
 let spacing: CGFloat = 20
 
 extension Color {
     static let cyberpunkBackground = Color(red: 0.94, green: 0.00, blue: 1.00) // Violet
     static let cyberpunkText = Color(red: 1.00, green: 0.91, blue: 0.00) // Yellow
     static let cyberpunkCaption = Color.white
+}
+
+struct ImageView: View {
+
+    @ObservedObject var engine: Engine
+
+    var body: some View {
+        if let image = engine.viewfinderImage {
+            image
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(radius)
+        }
+    }
 }
 
 struct CyberpunkView: View {

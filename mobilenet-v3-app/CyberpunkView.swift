@@ -54,7 +54,7 @@ struct CyberpunkInfoView: View {
         VStack(spacing: spacing) {
 
             VStack {
-                let label = engine.label != nil ? engine.label! : "Undefined"
+                let label = engine.label ?? "Undefined"
                 Text("What")
                     .font(.caption)
                     .textCase(.uppercase)
@@ -81,7 +81,7 @@ struct CyberpunkInfoView: View {
                 }
                 .frame(width: width / 2.0)
 
-                let fps = engine.fps != nil ? engine.fps! : 0
+                let fps = engine.fps ?? 0
                 VStack {
                     Text("FPS")
                         .font(.caption)
@@ -97,7 +97,6 @@ struct CyberpunkInfoView: View {
 
             }
         }
-
     }
 }
 
